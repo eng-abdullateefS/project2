@@ -1,3 +1,57 @@
+/*start var*/
+:root{
+    --main-color: #0000cc;
+    --second-color:#ffffff;
+    --third-color: aqua;
+    --trans-color:rgba(7, 174, 174, 50%);
+}
+/* end var */
+/* component */
+.main-head{
+    text-align: center;
+}
+.main-head h2{
+    font-size: 50px;
+    font-weight: normal;
+    position: relative;
+    color: var(--second-color);
+    text-transform: uppercase;
+    margin-bottom: 50px;
+
+}
+.main-head h2::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 140px;
+    bottom: -25px;
+    background-color: var(--third-color);
+
+}
+.main-head h2::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    border: 5px solid var(--main-color);
+    height: 20px;
+    width: 20px;
+    bottom: -38px;
+    background-color: var(--third-color);
+
+}
+.main-head p{
+    width: 500px;
+    margin: 0 auto 100px;
+    line-height: 1.5;
+    max-width: 100%;
+    color:var(--third-color);
+}
+
+/* end component */
 /* العناصر الرئيسية */
 *{
     --moz-box-sizing: border-box;
@@ -9,12 +63,14 @@
 
  body{
     font-family: "Cal Sans", sans-serif ,"Bebas Neue", sans-serif;
+    background-color: var(--main-color);
  }
  html{
     scroll-behavior: smooth;
  }
  ul{
     list-style: none;
+    
  }
      /* small screen */
  @media (min-width: 768px) {
@@ -35,5 +91,249 @@
          .container{
           width: 1170px;
          }
+
  }
+ @media (min-width: 1400px) {
+         .container {
+          width:calc(100% - 50px);
+         }
+    
+}
 /* انتهاء العناصر الرئيسية */
+
+/* start header */
+  header{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+
+
+  }
+ header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px ;
+    position: relative;
+    min-height :97px;
+
+    } 
+header .container ::after{
+    content: '';
+    position:absolute ;
+    bottom: 0px;
+    height: 2px;
+    width: calc(100% - 20px);
+    left: 15px;
+    background: var(--second-color);
+}
+header .logo img{
+    height: 60px;
+    
+}
+header nav{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    color: var(--second-color);
+    justify-content: flex-end;
+}
+header nav .toggle{
+    color: var(--second-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    header nav .toggle{
+        display: none;
+    }
+}
+
+header nav ul{
+    display: flex;
+    z-index: 1;
+    
+}
+@media (max-width: 765px) {
+    header nav ul{
+        display: none;
+        /* position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        background: var(--main-color);
+        transition: 0.5s; */
+    }
+    
+}
+/* ترتيب الاعمدة بشكل افقي في الهاتف */
+header nav .toggle:hover + ul{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+   
+}
+header nav .toggle:hover + ul li a{
+    padding: 10px;
+}
+/* كيفية تموضع الروابط */
+header nav ul li a{
+    display: block;
+    text-decoration: none;
+    color: var(--second-color);
+    padding: 40px 15px;
+    font-size: 15px;
+    transition: 0.5s;
+   
+}
+header nav ul li a:hover{
+    color: var(--main-color);
+    background: var(--second-color);
+    border-radius: 0px 100px;
+    text-shadow: 0 0 10px var(--main-color);
+
+    
+}
+header nav ul li a.active{
+    color: var(--third-color);
+    border-radius: 0px 100px;
+
+}
+header nav .form{
+    width: 50px;
+    height: 30px;
+    margin-left: 40px;
+    border-left: 3px solid var(--second-color);
+}
+/* الايقونة */
+header nav .form i{
+    color: var(--second-color);
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    right: 0;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+header nav .form i:hover{
+    color: var(--third-color);
+    text-shadow: 5px 0 10px var(--third-color);
+}
+
+/* end header */
+
+
+/* start landing */
+.landing{
+    position: relative;
+    min-height: 100vh;
+    background-image: url(../imgs/banar.jpg);
+    background-size: cover; 
+}
+.landing .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(58, 119, 137, 0.5);
+}
+.landing  .text{
+    position:absolute;
+    top: 50%;
+    left: 0;
+    transform: translatey(-50%);
+    width: 50%;
+    background-color: var(--trans-color);
+    color: var(--second-color);
+    padding: 60px;
+    display: flex;
+    justify-content: flex-end;
+  /* من اجل تموضع النص في نص الشاشة للشاشات الصغيرة */
+}
+ @media (max-width: 767px) {
+    .landing .text{
+        width: 100%;
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+    /* ---------------------- */
+ }
+.landing .text .content{
+    max-width: 400px;
+}
+.landing .text .content h2{
+    font-size: 40px;
+    font-weight:normal; 
+    margin-bottom: 20px;
+}
+.landing .text .content p{
+    font-size: 16px;
+    line-height: 1.5;
+}   
+/* الايقونات الجانبية */
+.landing .chang{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--third-color);
+}
+/* ------ */
+
+/* لاخفائها في الشاشات الصغيرة */
+@media (max-width: 767px) {
+    .landing .chang{
+        display: none;
+    }
+    
+}
+/* ----------------------------- */
+.landing .fa-angle-left{
+    left: 30px;
+}
+.landing .fa-angle-right{
+    right: 30px;
+}
+.landing .fa-angle-left:hover{
+    color: var(--main-color);
+    text-shadow: 0 0 10px var(--main-color);
+}
+.landing .fa-angle-right:hover{
+    color: var(--main-color);
+    text-shadow: 0 0 10px var(--main-color);
+}
+.landing .bullets{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+.landing .bullets li{
+    width: 10px;
+    height: 10px;
+    background: var(--second-color);
+    border: solid 2px var(--main-color);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.landing .bullets li.active{
+    background-color: var(--third-color);
+}
+
+
+/* end landing */
+
+/* start servivces */
+
+/* end services */
+
