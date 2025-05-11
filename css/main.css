@@ -4,6 +4,7 @@
     --second-color:#ffffff;
     --third-color: aqua;
     --trans-color:rgba(7, 174, 174, 50%);
+    --section-padding:60px;
 }
 /* end var */
 /* component */
@@ -77,6 +78,9 @@
        .container{
         width: 750px;
        }
+        /* .container1{
+            width: 750px;
+            } */
  }
 
  /* medium screen */
@@ -84,6 +88,9 @@
          .container{
           width: 970px;
          }
+        /* .container1{
+            width: 970px;
+            } */
     
  } 
   /* large screen */
@@ -91,12 +98,18 @@
          .container{
           width: 1170px;
          }
+        /* .container1{
+            width: 1170px;
+            } */
 
  }
  @media (min-width: 1400px) {
          .container {
           width:calc(100% - 50px);
          }
+         /* .container1{
+          width: calc(100% - 50px);
+         } */
     
 }
 /* انتهاء العناصر الرئيسية */
@@ -334,6 +347,47 @@ header nav .form i:hover{
 /* end landing */
 
 /* start servivces */
+.our-services{
+    padding-top: var(--section-padding) ;
+    padding-bottom: var(--section-padding) ;
+    margin: 50px;
+}
 
-/* end services */
+@media (min-width: 767px) {
+    .our-services .services-content{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax( 300px,1fr));
+        gap: 30px;
+    }
+}
+.our-services .service{
+    display: flex
+}
+
+@media (max-width: 767px) {
+    .our-services .service{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    
+    }}
+ .our-services .service i{
+    margin-right: 40px;
+    font-size: 30px;
+    color: var(--second-color);
+ }
+ .our-services .service h3{
+    font-size: 30px;
+    font-weight: normal;
+    color: var(--second-color);
+    margin-bottom: 20px;
+ }
+ .our-services .service p{
+    color: var(--third-color);
+    line-height: 1.5;
+    font-size: 16px;
+ }
+
+/*end services */
 
