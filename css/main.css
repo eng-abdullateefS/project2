@@ -126,13 +126,15 @@
  header .container{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* تم التعديل لتضارب الcontainer */
+    /* align-items: center; */
+    /* --------------- */
     margin: 25px ;
     position: relative;
     min-height :97px;
 
     } 
-header .container ::after{
+header .container  nav::after{
     content: '';
     position:absolute ;
     bottom: 0px;
@@ -534,4 +536,177 @@ header nav .form i:hover{
     transition: 0.5s;
 }
 /* end portfolio */
+
+/* start video */
+/* .video{
+    position: relative;
+}
+.video video{
+    width: 100%;
+    height: 90%;
+
+}
+.video .text{
+    width: 100%;
+    position: absolute;
+    top: 70%; 
+    transform: translateY(-50%);  
+    padding: 50px;
+    text-align: center;
+    color: var(--second-color);
+    background-color: var(--trans-color)
+
+}
+.video .text h2{
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  font-weight: 400;
+}
+.video .text p{
+line-height: 1.5;
+}
+.video .text button{
+  background-color: var(--third-color);
+ color: var(--second-color);
+ text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 0px 100px;
+    display:block;
+    width: fit-content;
+    margin:25px auto;
+    text-transform: uppercase;
+
+}
+.video .text button:hover{
+    background-color: var(--second-color);
+    color: var(--main-color);
+    text-shadow: 0 0 10px var(--main-color);
+    transition: 0.5s;
+} */
+
+
+/* end video */
+
+/* start about */
+.about-us{
+    padding-top: var(--section-padding) ;
+    overflow: hidden;
+    text-align: center;
+}
+.about-us img {
+    position: relative;  
+    max-width: 90%;
+    border: solid 5px var(--second-color);
+    border-radius: 0px 100px;
+    margin-top: -120px;
+    bottom: -120px;  
+}
+@media (max-width: 767px) {
+    .about-us img{
+        margin-top: -60px;
+        bottom: -60px;  
+          
+    }
+    
+}
+/* end about */
+
+/* start our skills */
+.our-skills{
+    padding-top: var(--section-padding) ;
+    padding-bottom: var(--section-padding) ;
+}
+.our-skills .container  {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+@media (min-width: 800px) {
+    .our-skills .container > div {
+        flex-basis: 45%;
+    }
+}
+@media (max-width: 799px) {
+    .our-skills .container > div {
+        flex-basis: 100%;
+    }
+    
+}
+.our-skills .container > div > h3{
+ margin: 0 0 30px;
+ font-weight: normal;
+ text-align: center;
+ text-transform: uppercase;
+ color: var(--second-color);
+}
+.our-skills .container > div > p{
+    color: var(--third-color);
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.our-skills .testimonial .content{
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+}
+.our-skills .testimonial .content:hover{
+    transform: scale(1.1);
+}
+.our-skills .testimonial .content img{
+    height: 100px;
+    width: 100px;
+    border: solid var(--second-color);
+    border-radius: 50%;
+    margin-right: 40px;
+    
+}
+@media (max-width: 767px) {
+    .our-skills .testimonial .content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .our-skills .testimonial .content img{
+        margin: 0 auto 20px;
+    }
+    
+}
+.our-skills .testimonial .text{
+    line-height:3;
+    border-bottom: 2px dotted var(--third-color);
+    color:#777;
+
+}
+.our-skills .testimonial .text p {
+    font-size: 14px;
+    font-weight: bold;
+    color:  var(--second-color);
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+ .our-skills .testimonial .bullets{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+ }
+ .our-skills .testimonial .bullets li{
+     width: 10px;
+    height: 10px;
+    background: var(--second-color);
+    border: solid 2px var(--main-color);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+ }
+ .our-skills .testimonial .bullets li.active{
+    background-color: var(--third-color);
+ }
+
+ /* عند المرور من فوق الصور */
+.our-skills .testimonial .content img:hover{
+    transform: scale(1.1);
+}
 
