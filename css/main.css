@@ -762,6 +762,7 @@ line-height: 1.5;
 /* end our skills */
 
 /* start subscribe */
+
 .subscribe{
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
@@ -811,7 +812,7 @@ line-height: 1.5;
     border-radius: 0 100px;
     border: solid 2px var(--second-color);
     background: none;
-    padding: 20px 20px 20px 50px;
+    padding: 20px 20px 20px 55px;
     margin-right: 10px;
     color: var(--second-color);
     width: calc(100% - 150px);
@@ -838,8 +839,8 @@ line-height: 1.5;
     background-color: var(--second-color);
     color: var(--main-color);
     transition: 0.5s;
-     text-shadow: 0 0 10px var(--main-color);
-     font-weight: bold;
+    text-shadow: 0 0 10px var(--main-color);
+    font-weight: bold;
 }
 
 .subscribe p{
@@ -854,6 +855,104 @@ line-height: 1.5;
 }
 
 /* end subscribe */
+
+/* start contact us */
+.contact-us{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+
+.contact-us .content{
+    display: flex;
+    justify-content:space-between;
+}
+@media (max-width: 767px) {
+    .contact-us .content{
+        flex-direction: column;
+    }
+    
+}
+.contact-us .content form{
+    flex-basis: 60%;
+}
+.contact-us .content .main-input{
+    padding: 25px;
+    display: block;
+    border-radius: 0 100px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+    width: 90%;
+    border: solid 2px var(--second-color);
+
+
+}
+.contact-us .content form textarea.main-input{
+    height: 250px;
+}
+.contact-us .content form input[type="submit"]{
+
+    background-color: var(--third-color);
+    color: var(--second-color);
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 0px 100px;
+    border: 2px solid var(--second-color);
+    display: flex;
+    margin-left: auto;
+    cursor: pointer;
+}
+.contact-us .content form input[type="submit"]:hover{
+    background-color: var(--second-color);
+    color: var(--main-color);
+    transition: 0.5s;
+    text-shadow: 0 0 10px var(--main-color);
+    font-weight: bold;
+}
+.contact-us .content .text{
+    width: 30%;
+}
+@media (max-width: 767px) {
+    .contact-us .content .text
+    {
+        width: 100%;
+        order: -1;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 767px){
+    .contact-us .content .text h4:nth-of-type(2) {
+        margin-top: 5px;
+    }
+}
+.contact-us .content .text h4{
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: 600px;
+    font-size: 20px;
+    color: var(--second-color);
+    word-spacing: 5px;
+}
+.contact-us .content .text .phone{
+    display: block;
+    color: var(--third-color);
+    margin-bottom: 10px;
+    
+}
+.contact-us .content .text address{
+    color: var(--third-color);
+
+}
+.contact-us .content .text h4:nth-of-type(2){
+    margin-top: 150px;
+}
+
+/* end contact us */
+
+/* start footer */
+
+/* end footer */
 
 
 
